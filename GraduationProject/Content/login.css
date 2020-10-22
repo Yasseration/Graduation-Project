@@ -1,0 +1,19 @@
+﻿/**** navbar active link ****/
+#login {
+	background-Color: var(--main-hv-color);
+}
+
+	#login a text, #login a text:hover {
+		color: white !important;
+	}
+
+@media screen and (max-width: 768px) {
+	#login {
+		background-Color: rgba(0,0,0,0);
+	}
+
+		#login a text, #login a text:hover {
+			color: var(--main-hv-color) !important;
+		}
+}
+/***************************/

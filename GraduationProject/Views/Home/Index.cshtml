@@ -1,0 +1,26 @@
+﻿@{ ViewBag.Title = "Home Page"; }
+@section style
+{
+    <link rel="stylesheet" href="~/Content/home.css" />
+}
+<!-- home section-->
+<section id="home-sec" class="w-100">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-7 center-vertical py-4 text-left order-1 order-lg-0">
+                <h2 class="my-2 font-weight-bold">Skin Canser Detector</h2>
+                <p class="my-0">
+                    - Our project aims to determine whether your skin changes are likely to be skin cancer,
+                    Note that further testing may be needed to confirm that diagnosis. <br />
+                    - Medical History keeps the patient's past and present which may contain relevant information bearing on their health past, present,
+                    and future. It being an account of skin canser medical events and problems a person has experienced.
+                </p>
+                <div><a class="btn custom-btn px-3 mt-3 text-uppercase font-weight-bold" href=@Url.Action("Analysis","Patient")>Start Now</a></div>
+            </div>
+            <div class="col-lg-5 center-vertical p-3 order-0 order-lg-1">
+                <img src="~/Images/home.svg" alt="home image" class="m-auto w-100"/>
+            </div>
+        </div>
+    </div>
+</section>

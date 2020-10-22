@@ -1,0 +1,18 @@
+﻿/**** navbar active link ****/
+#analysis {
+    background-Color: var(--main-hv-color);
+}
+#analysis a text, #analysis a text:hover  {
+    color: white !important;
+}
+
+@media screen and (max-width: 768px) {
+    #analysis {
+        background-Color: rgba(0,0,0,0);
+    }
+
+    #analysis a text, #analysis a text:hover {
+        color: var(--main-hv-color) !important;
+    }
+}
+/***************************/

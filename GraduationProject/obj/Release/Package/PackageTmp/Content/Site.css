@@ -1,0 +1,194 @@
+﻿/************* basic style **************/
+:root {
+    --main-bg-color: #191919;
+    --main-hv-color: #026dca ;
+    --main-sec-color: #0275d8 ;
+    --main-font-color: #292b2c;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../webfonts/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url("../webfonts/Roboto-Regular.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url("../webfonts/Roboto-Medium.ttf");
+  font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    color: var(--main-font-color);
+    font-size: 15px;
+    font-family: 'Roboto';
+    letter-spacing: 0.5px;
+}
+
+.bottom-line {
+    margin-top: -2px;
+    margin-bottom: 4px;
+    height: 4px;
+    width: 40px;
+    background-color: var(--main-sec-color);
+}
+
+/************* common links style **************/
+
+a:hover {
+    text-decoration: none;
+}
+
+.link{
+    color: var(--main-sec-color);
+}
+.link:hover{
+    color: var(--main-hv-color);
+}
+input[type="submit"], .custom-btn{
+    text-align: center;
+    background-color: var(--main-sec-color);
+    color: white ;
+
+}
+input[type="submit"]:hover, .custom-btn:hover {
+    background-color: var(--main-hv-color);
+    color: white ;
+}
+input[type="file"],select{
+    cursor: pointer;
+}
+/************* navbar **************/
+.navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: var(--main-bg-color);
+}
+
+.navbar li {
+    margin: 0 4px;
+    padding: 2px 0;
+}
+
+.navbar-nav a{
+    padding: 16px 14px;
+}
+
+.navbar-brand {
+    font-size: 22px;
+}
+
+.navbar-nav a text {
+    font-size: 16px;
+}
+
+.navbar-nav a text, .navbar-brand{
+    color: white;
+}
+
+.navbar-nav a:hover text, .navbar-brand:hover{
+    color: var(--main-hv-color) !important;
+}
+
+/****** Navbar on medium screen devices ******/
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+
+    .navbar li {
+        margin: 2px 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-nav a {
+        padding: 4px !important;
+    }
+}
+/************* footer Section **************/
+footer {
+  background-color: var(--main-bg-color);
+  color: white;
+  padding: 50px 12px;
+  cursor: default;
+}
+
+footer h5 {
+  margin-top: 8px;
+  color:var(--main-sec-color);
+}
+
+footer p {
+  margin: 0;
+}
+
+.links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-link {
+  display: inline-block;
+  margin: 0 3px;
+  }
+
+.social-link , .links li a{
+  color: white;
+}
+
+.social-link:hover,   .links a:hover  {
+  color: var(--main-hv-color);
+}
+
+/************* Forms style *************/
+.content {
+  padding-top: 60px;
+  min-height: 100vh;
+}
+
+.content *:not(input):not(select){
+  text-align: center ;
+}
+.center-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.custom-form {
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(235, 235, 235);
+  box-shadow: 0 0 20px rgb(235, 235, 235);
+  border-radius: 4px;
+}
+.custom-form>div>Img {
+  width: 100px;
+}
+.error-msg {
+  height: 22px;
+  color: lightcoral;
+  font-size: 13px;
+  text-align: left !important;
+}
+
+.media-hv:hover
+{
+  background-color: var(--main-sec-color) !important;
+}

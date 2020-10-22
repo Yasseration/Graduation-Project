@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Analysis";
+}
+@section style
+{
+    <link rel="stylesheet" href="~/Content/analysis.css" />
+}
+
+<div class="container content center-vertical">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            @using (Html.BeginForm("Analysis", "Patient", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="col-lg-8 offset-lg-2  px-3 px-sm-5 custom-form">
+                    <div>
+                        <i class="fas fa-user-nurse fa-5x mb-1"></i>
+                        <h2 class="heavy-text text-uppercase">Analysis</h2>
+                        <hr class="bottom-line" />
+                        <p>Please upload a photo of your skin.<br /></p>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="uploaded" name="uploaded" accept=".png, .jpg, .jpeg" required>
+                        <label class="custom-file-label text-secondary" for="customFile">Upload picture</label>
+                    </div>
+                    <div class="error-msg">
+                        @Html.ValidationMessage("ImgError")
+                        @Html.ValidationMessage("Error")
+                    </div>
+                    <input type="submit" value="Check Now" class="btn custom-btn col-sm-3" />
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/register.js"></script>
+}
+
+
+

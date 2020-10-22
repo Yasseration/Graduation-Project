@@ -1,0 +1,124 @@
+﻿@model GraduationProject.Models.Patient
+
+@{
+    ViewBag.Title = "Register";
+}
+@section style
+{
+    <link rel="stylesheet" href="~/Content/register.css" />
+}
+
+<div class="container content center-vertical">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            @using (Html.BeginForm("Register", "Patient", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+            <div class="col-lg-8 offset-lg-2 px-3 px-sm-5 custom-form">
+                <div>
+                    <i class="far fa-user-circle fa-5x mt-1"></i>
+                    <h2>Register Form</h2>
+                    <hr class="bottom-line" />
+                    <p><strong>Horray, </strong>You are about 30 seconds away from using our system.</p>
+                </div>
+
+                <div class="d-sm-flex">
+                    <div class="col-sm-6 pl-0 pr-0 pr-sm-2">
+
+                        <div class="input-group" title="First Name">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="far fa-user"></i></span>
+                            </div>
+                            @Html.EditorFor(model => model.FName, new { htmlAttributes = new { @class = "form-control", placeholder = "First Name" } })
+                        </div>
+                        <div class="error-msg">
+                            @Html.ValidationMessageFor(model => model.FName)
+                        </div>
+                    </div>
+                    <div class="col-sm-6 pr-0 pl-0 pl-sm-2">
+                        <div class="input-group" title="Last Name">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="far fa-user"></i></span>
+                            </div>
+                            @Html.EditorFor(model => model.LName, new { htmlAttributes = new { @class = "form-control", placeholder = "Last Name" } })
+                        </div>
+                        <div class="error-msg">
+                            @Html.ValidationMessageFor(model => model.LName)
+                        </div>
+                    </div>
+                </div>
+                <div class="d-sm-flex">
+                    <div class="col-sm-6 pl-0 pl-0 pr-sm-2">
+
+                        <div class="input-group" title="Age">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="far fa-user"></i></span>
+                            </div>
+                            @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control", placeholder = "Age" } })
+                        </div>
+                        <div class="error-msg">
+                            @Html.ValidationMessageFor(model => model.Age)
+                        </div>
+                    </div>
+                    <div class="col-sm-6 pr-0 pl-0 pl-sm-2">
+                        <div class="input-group" title="Blood Group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="far fa-user"></i></span>
+                            </div>
+                            @Html.DropDownList("BloodGroupID", null,"Blood Group", htmlAttributes: new { @class = "custom-select" })
+                        </div>
+                        <div class="error-msg">
+                            @Html.ValidationMessageFor(model => model.LName)
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="uploaded" name="uploaded" accept=".png, .jpg, .jpeg">
+                    <label class="custom-file-label text-secondary" for="customFile">Choose profile picture</label>
+                </div>
+                <div class="error-msg">
+                </div>
+
+                <div class="input-group" title="Email Address">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    </div>
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email Address" } })
+                </div>
+                <div class="error-msg">
+                    @Html.ValidationMessageFor(model => model.Email)
+                    @Html.ValidationMessage("EmailExist")
+                </div>
+
+                <div class="input-group" title="Password">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    </div>
+                    @Html.EditorFor(model => model.PW, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
+                </div>
+                <div class="error-msg">
+                    @Html.ValidationMessageFor(model => model.PW)
+                    @Html.ValidationMessage("ImgError")
+                    @Html.ValidationMessage("RegisterError")
+                </div>
+
+                <input type="submit" value="Register" class="btn col-12 mb-2" />
+                <p class="mb-0">
+                    <strong>Already have account ?</strong> Please click the following link to
+                    <a class="link" href='@Url.Action("Login", "Patient")'>Sign In</a> .
+                </p>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/register.js"></script>
+}
+

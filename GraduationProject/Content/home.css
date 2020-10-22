@@ -1,0 +1,14 @@
+﻿/**** Home Section ****/
+#home-sec {
+    min-height: 100vh;
+    padding: 150px 16px 100px;
+}
+
+#home-text p {
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+#home-sec img {
+    max-width: 450px;
+}

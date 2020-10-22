@@ -1,0 +1,18 @@
+﻿/**** navbar active link ****/
+#register {
+    background-Color: var(--main-hv-color);
+}
+#register a text, #register a text:hover  {
+    color: white !important;
+}
+
+@media screen and (max-width: 768px) {
+    #register {
+        background-Color: rgba(0,0,0,0);
+    }
+
+    #register a text, #register a text:hover {
+        color: var(--main-hv-color) !important;
+    }
+}
+/***************************/

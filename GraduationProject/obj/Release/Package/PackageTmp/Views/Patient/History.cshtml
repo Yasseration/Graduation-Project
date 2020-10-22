@@ -1,0 +1,40 @@
+﻿@model IEnumerable<GraduationProject.Models.PatientHistory>
+@{
+    ViewBag.Title = "History";
+}
+@section style
+{
+    <link rel="stylesheet" href="~/Content/history.css" />
+}
+<div class="container content center-vertical">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="col-lg-8 offset-lg-2  px-3 px-sm-5 custom-form">
+                <div>
+                    <i class="fas fa-history fa-5x mb-1"></i>
+                    <h2 class="heavy-text text-uppercase">Medical History</h2>
+                    <hr class="bottom-line" />
+                    @if (Model == null || Model.Count() < 1)
+                    {
+                        <p><strong class="text-primary">@User.Identity.Name</strong>, We are sorry that your medical history is empty right now .<br /></p>
+
+                    }
+                    else
+                    {
+                        <p><strong class="text-primary">@User.Identity.Name</strong>, We Found <b>@Model.Count()</b> previous result(s) in our database .<br /></p>
+                        foreach (var history in Model)
+                        {
+                            <div class="rounded border p-2 mb-2 bg-light history">
+                                <p class="mb-0">
+                                    <text> Your result was : <b class="text-info">@history.Result</b></text><br />
+                                    <Text>You checked on : <i>@history.ADate.ToString("MMMM dd, yyyy")</i></Text>
+                                </p>
+                            </div>
+                        }
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
